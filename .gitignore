@@ -1,0 +1,62 @@
+# ── Maven ─────────────────────────────────────────────────────────────────────
+target/
+!src/main/**/target/
+!src/test/**/target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+dependency-reduced-pom.xml
+.mvn/timing.properties
+.mvn/wrapper/maven-wrapper.jar
+
+# ── IDE — IntelliJ ────────────────────────────────────────────────────────────
+.idea/
+*.iml
+*.ipr
+*.iws
+out/
+
+# ── IDE — Eclipse / STS ───────────────────────────────────────────────────────
+.classpath
+.project
+.settings/
+.springBeans
+.sts4-cache
+.apt_generated
+.factorypath
+bin/
+
+# ── IDE — VS Code ─────────────────────────────────────────────────────────────
+.vscode/
+
+# ── IDE — NetBeans ────────────────────────────────────────────────────────────
+nbproject/private/
+nbbuild/
+dist/
+nbdist/
+.nb-gradle/
+build/
+!src/main/**/build/
+!src/test/**/build/
+
+# ── OS ────────────────────────────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+*.swp
+*~
+
+# ── Logs ──────────────────────────────────────────────────────────────────────
+*.log
+logs/
+
+# ── Secrets — NEVER commit these ─────────────────────────────────────────────
+.env
+.env.local
+.env.*.local
+*.pem
+*.key
+*.p12
+*.jks
+keys/
