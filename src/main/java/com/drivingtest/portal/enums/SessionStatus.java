@@ -4,6 +4,5 @@ package com.drivingtest.portal.enums;
 public enum SessionStatus {
     IN_PROGRESS,
     COMPLETED,
-    ABANDONED,
     TIMED_OUT
 }
