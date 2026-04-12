@@ -17,6 +17,5 @@ public record ExamAnswerDto(
         boolean timedOut,
         int pointsAwarded,
         Instant presentedAt,
-        Instant answerDeadline,
         Instant answeredAt
 ) {}

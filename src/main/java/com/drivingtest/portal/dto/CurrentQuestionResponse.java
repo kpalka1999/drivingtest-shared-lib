@@ -25,6 +25,5 @@ public record CurrentQuestionResponse(
         MediaType mediaType,
         List<AnswerOptionDto> answers,
         Instant presentedAt,
-        Instant answerDeadline,
         Instant sessionDeadline
 ) {}
