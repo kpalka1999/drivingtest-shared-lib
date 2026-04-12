@@ -31,6 +31,7 @@ public record AuthResponse(
             String email,
             String firstName,
             String lastName,
-            UserRole role
+            UserRole role,
+            PlanStatusDto planStatus
     ) {}
 }
