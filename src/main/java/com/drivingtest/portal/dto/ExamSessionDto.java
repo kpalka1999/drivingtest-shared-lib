@@ -2,6 +2,7 @@ package com.drivingtest.portal.dto;
 
 import com.drivingtest.portal.enums.LicenseType;
 import com.drivingtest.portal.enums.SessionStatus;
+import com.drivingtest.portal.enums.SessionType;
 
 import java.time.Instant;
 
@@ -14,6 +15,7 @@ public record ExamSessionDto(
         Long id,
         Long userId,
         LicenseType licenseType,
+        SessionType sessionType,
         Instant startedAt,
         Instant finishedAt,
         Instant sessionDeadline,
