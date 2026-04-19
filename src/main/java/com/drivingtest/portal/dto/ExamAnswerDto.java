@@ -17,6 +17,7 @@ public record ExamAnswerDto(
         Long selectedAnswerId,
         String selectedAnswerContent,
         Long correctAnswerId,
+        String correctAnswerContent,
         boolean correct,
         boolean skipped,
         boolean timedOut,
