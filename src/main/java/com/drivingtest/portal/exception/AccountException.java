@@ -35,6 +35,8 @@ public class AccountException extends RuntimeException {
         TOKEN_EXPIRED,
         TOKEN_ALREADY_USED,
         TOKEN_INVALID,
-        SUBSCRIPTION_CONFLICT
+        TOKEN_LOCKED_OUT,
+        SUBSCRIPTION_CONFLICT,
+        USER_NOT_FOUND
     }
 }

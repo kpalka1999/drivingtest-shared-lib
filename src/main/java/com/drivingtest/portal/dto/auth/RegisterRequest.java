@@ -1,5 +1,6 @@
 package com.drivingtest.portal.dto.auth;
 
+import com.drivingtest.portal.enums.LicenseType;
 import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
@@ -38,5 +39,8 @@ public record RegisterRequest(
             message = "Password must contain at least one uppercase letter, one digit, and one special character"
         )
         @Schema(example = "Secure@123")
-        String password
+        String password,
+
+        @Schema(description = "Target driving licence category", example = "B", nullable = true)
+        LicenseType licenseTypeTarget
 ) {}
