@@ -8,6 +8,7 @@ public record AnswerDto(
         String content,
         String contentEn,
         String contentDe,
+        String contentUk,
         int displayOrder,
         Boolean isCorrect   // null when the question is served to a student (hidden)
 ) {}

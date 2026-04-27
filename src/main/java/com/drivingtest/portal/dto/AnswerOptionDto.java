@@ -10,5 +10,6 @@ public record AnswerOptionDto(
         String content,
         String contentEn,
         String contentDe,
+        String contentUk,
         int displayOrder
 ) {}
