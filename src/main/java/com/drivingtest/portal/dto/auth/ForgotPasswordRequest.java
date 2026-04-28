@@ -15,5 +15,9 @@ public record ForgotPasswordRequest(
         @Email(message = "A valid e-mail address is required")
         @NotBlank(message = "E-mail is required")
         @Schema(example = "jan.kowalski@example.com")
-        String email
+        String email,
+
+        @Schema(description = "Preferred locale for the reset email — pl | en | de | uk; defaults to pl if null",
+                example = "pl", nullable = true)
+        String preferredLocale
 ) {}

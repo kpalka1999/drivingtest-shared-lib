@@ -1,5 +1,6 @@
 package com.drivingtest.portal.dto;
 
+import com.drivingtest.portal.exception.ErrorCode;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import io.swagger.v3.oas.annotations.media.Schema;
 
@@ -24,6 +25,10 @@ public record ErrorResponse(
         @Schema(description = "HTTP reason phrase", example = "Not Found")
         String error,
 
+        @Schema(description = "Stable machine-readable error code for frontend i18n",
+                example = "QUESTION_NOT_FOUND", nullable = true)
+        String errorCode,
+
         @Schema(description = "Human-readable error description",
                 example = "Question with id 42 not found")
         String message,
@@ -43,20 +48,25 @@ public record ErrorResponse(
         @Schema(description = "Field-level validation errors (only present on 400 responses)")
         Map<String, String> fieldErrors
 ) {
-    /**
-     * Convenience factory for error responses without field errors.
-     */
-    public static ErrorResponse of(int status, String error, String message,
-                                   String path, String traceId) {
-        return new ErrorResponse(Instant.now(), status, error, message, path, traceId, null);
+    /** Convenience factory: error response with a specific errorCode. */
+    public static ErrorResponse of(int status, String error, ErrorCode errorCode,
+                                   String message, String path, String traceId) {
+        return new ErrorResponse(Instant.now(), status, error,
+                errorCode != null ? errorCode.name() : null,
+                message, path, traceId, null);
     }
 
-    /**
-     * Convenience factory for validation error responses with field-level details.
-     */
+    /** Convenience factory: error response without an errorCode (backwards-compat). */
+    public static ErrorResponse of(int status, String error, String message,
+                                   String path, String traceId) {
+        return new ErrorResponse(Instant.now(), status, error, null, message, path, traceId, null);
+    }
+
+    /** Convenience factory: validation error responses with field-level details. */
     public static ErrorResponse validationError(String path, String traceId,
                                                 Map<String, String> fieldErrors) {
         return new ErrorResponse(Instant.now(), 400, "Bad Request",
+                ErrorCode.VALIDATION_FAILED.name(),
                 "Validation failed", path, traceId, fieldErrors);
     }
 }

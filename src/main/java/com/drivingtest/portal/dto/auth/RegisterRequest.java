@@ -42,5 +42,9 @@ public record RegisterRequest(
         String password,
 
         @Schema(description = "Target driving licence category", example = "B", nullable = true)
-        LicenseType licenseTypeTarget
+        LicenseType licenseTypeTarget,
+
+        @Schema(description = "Preferred locale for system emails — pl | en | de | uk; defaults to pl if null",
+                example = "pl", nullable = true)
+        String preferredLocale
 ) {}
