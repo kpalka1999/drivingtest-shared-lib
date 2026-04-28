@@ -20,6 +20,7 @@ public record CurrentQuestionResponse(
         String questionContent,
         String questionContentEn,
         String questionContentDe,
+        String questionContentUk,
         QuestionType questionType,
         String mediaReference,
         MediaType mediaType,
