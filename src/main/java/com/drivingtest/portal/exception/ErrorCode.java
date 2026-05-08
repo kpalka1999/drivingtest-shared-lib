@@ -19,6 +19,7 @@ public enum ErrorCode {
     AUTH_VERIFICATION_CODE_INVALID,
     AUTH_PASSWORD_RESET_TOKEN_INVALID,
     AUTH_CURRENT_PASSWORD_WRONG,
+    AUTH_REQUIRED,
 
     // ── Exam ──────────────────────────────────────────────────────────────────
     EXAM_SESSION_ACTIVE,
@@ -44,6 +45,31 @@ public enum ErrorCode {
     // ── Media ─────────────────────────────────────────────────────────────────
     MEDIA_NOT_FOUND,
     MEDIA_PATH_TRAVERSAL,
+
+    // ── Payment lifecycle ─────────────────────────────────────────────────────
+    PAYMENT_FAILED,
+    PAYMENT_PROVIDER_UNAVAILABLE,
+    PAYMENT_INVALID_AMOUNT,
+    PAYMENT_TIMEOUT,
+    PAYMENT_ALREADY_COMPLETED,
+    PAYMENT_SIGNATURE_INVALID,            // logged-only; never exposed in API responses
+
+    // ── Discount codes ────────────────────────────────────────────────────────
+    DISCOUNT_CODE_NOT_FOUND,
+    DISCOUNT_CODE_EXPIRED,
+    DISCOUNT_CODE_EXHAUSTED,
+    DISCOUNT_CODE_USER_LIMIT_REACHED,
+    DISCOUNT_CODE_NOT_APPLICABLE,
+    DISCOUNT_CODE_BELOW_MINIMUM,
+
+    // ── Subscription / invoice / refund ──────────────────────────────────────
+    SUBSCRIPTION_REQUIRED,                // gateway enforcement filter, 403
+    SUBSCRIPTION_PAYMENT_REQUIRED,        // checkout init when free-activation disabled
+    SUBSCRIPTION_CONFLICT,                // already-active or already-queued purchase
+    WAIVER_REQUIRED,
+    INVOICE_NOT_FOUND,
+    REFUND_AMOUNT_EXCEEDS_PAID,
+    REFUND_ALREADY_ISSUED,
 
     // ── Generic / fallback ────────────────────────────────────────────────────
     VALIDATION_FAILED,
