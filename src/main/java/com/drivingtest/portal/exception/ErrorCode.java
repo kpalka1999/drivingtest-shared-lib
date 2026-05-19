@@ -34,6 +34,10 @@ public enum ErrorCode {
     PRACTICE_SESSION_NOT_FOUND,
     PRACTICE_NO_DIFFICULT_QUESTIONS,
 
+    // ── Smart Review (SRS) ────────────────────────────────────────────────────
+    SMART_REVIEW_SESSION_ACTIVE,
+    SMART_REVIEW_NO_QUESTIONS,
+
     // ── Question ──────────────────────────────────────────────────────────────
     QUESTION_NOT_FOUND,
     QUESTION_INVALID_FILTER,
