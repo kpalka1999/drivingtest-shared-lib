@@ -38,6 +38,13 @@ public enum ErrorCode {
     SMART_REVIEW_SESSION_ACTIVE,
     SMART_REVIEW_NO_QUESTIONS,
 
+    // ── Learn by Category (Nauka po kategoriach) ──────────────────────────────
+    CATEGORY_EXAM_UNAVAILABLE_TRAINING_ONLY,
+    KNOWLEDGE_PHASE_INCOMPLETE,
+    CATEGORY_CONTENT_NOT_FOUND,
+    CATEGORY_HAS_NO_QUESTIONS,
+    CATEGORY_EXAM_SESSION_ACTIVE,
+
     // ── Question ──────────────────────────────────────────────────────────────
     QUESTION_NOT_FOUND,
     QUESTION_INVALID_FILTER,
